@@ -105,17 +105,20 @@ nav > .container {
 }
 /* end Navbar */
 
-/* Hero Image */
-.hero-image img {
+/* Banner */
+.banner img {
   margin-top: 3.5rem;
   width: 100%;
 }
-
-/* end Hero Image */
+/* end Banner */
 
 /* articles */
 article {
   padding: 3.5rem 0;
+}
+
+article > h1 {
+  text-align: center;
 }
 
 article#members {
@@ -124,51 +127,83 @@ article#members {
 /* end Articles */
 
 /* Member Section */
-.members-row > .col {
+.members-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.members-list > .col {
   padding: 0.75rem;
 }
 
-.card {
+.member-item {
   display: flex;
-  width: 100%;
   border: 1px solid var(--prussian-blue);
   border-radius: 0.75rem;
   overflow: hidden;
   cursor: pointer;
-  height: 100%;
 }
 
-.card-body {
-  padding: 1rem;
-  width: calc(calc(100% / 12) * 8);
-}
-
-.card-body p {
-  color: var(--cool-grey);
-}
-
-.card img {
+.member-item img {
   width: calc(calc(100% / 12) * 4);
   object-fit: cover;
   object-position: center;
 }
+
+.member-item > div {
+  padding: 1rem;
+  width: calc(calc(100% / 12) * 8);
+}
+
+.member-item > div > p {
+  color: var(--cool-grey);
+}
 /* end Member */
 
 /* Albums */
-.albums-row > .col {
-  flex-basis: calc(calc(100% / 12) * 6);
+.albums-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.albums-list > .col {
   padding: 0.75rem;
 }
 
-.albums-row img {
+.album-cover {
+  max-width: 13rem;
+  margin: 0 auto;
+}
+
+.album-cover > img {
   width: 100%;
   border-radius: 0.75rem;
 }
 
-.albums-row .body {
+.album-cover > div {
   padding: 1rem 0;
 }
 /* end Albums */
+
+/* Songs */
+.songs-row > .col {
+  flex-basis: calc(calc(100% / 12) * 8);
+}
+
+.songs-row img {
+  width: calc(calc(100% / 12) * 4);
+}
+/* end Songs */
+
+@media (min-width: 576px) {
+  .albums-list > .col {
+    flex-basis: calc(calc(100% / 12) * 6);
+  }
+  .albums-list {
+    justify-content: flex-start;
+  }
+}
 
 @media (min-width: 768px) {
   .nav-toggler {
@@ -186,17 +221,21 @@ article#members {
     width: min-content;
   }
 
-  .members-row > .col {
+  .members-list > .col {
     flex-basis: calc(calc(100% / 12) * 6);
   }
 
-  .albums-row > .col {
+  .member-item {
+    height: 100%;
+  }
+
+  .albums-list > .col {
     flex-basis: calc(calc(100% / 12) * 4);
   }
 }
 
 @media (min-width: 992px) {
-  .albums-row > .col {
+  .albums-list > .col {
     flex-basis: calc(calc(100% / 12) * 3);
   }
 }
