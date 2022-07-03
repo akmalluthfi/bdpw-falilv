@@ -4,7 +4,7 @@
   --gunmetal: #222831;
   --cultured: #f9f7f7;
   --lavender-web: #dbe2ef;
-
+  --lavender-floral: #a98ae7ff;
   --cool-grey: #8b9ab3ff;
   --queen-blue: #556c87ff;
   --rich-black-fogra-29: #090b14ff;
@@ -24,7 +24,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: var(--cultured);
+  /* color: var(--cultured); */
+  color: rgb(226, 232, 240);
   background-color: var(--rich-black-fogra-29);
 }
 
@@ -35,7 +36,6 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  /* background-color: rgb(255 255 255/0.7); */
   background-color: rgba(9, 11, 20, 0.7);
   backdrop-filter: blur(4px);
 }
@@ -64,6 +64,7 @@ nav > .container {
 .nav-toggler {
   padding: 0.5rem 0.75rem;
   cursor: pointer;
+  color: var(--lavender-floral);
 }
 
 .nav-list {
@@ -100,15 +101,25 @@ nav > .container {
 }
 
 .nav-item:hover {
-  color: var(--prussian-blue);
+  /* color: var(--prussian-blue); */
+  color: var(--lavender-floral);
   font-weight: 500;
 }
 /* end Navbar */
 
 /* Banner */
+.banner {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .banner img {
-  margin-top: 3.5rem;
+  min-width: 425px;
+  max-height: 800px;
   width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 /* end Banner */
 
@@ -121,8 +132,36 @@ article > h1 {
   text-align: center;
 }
 
+article#biography {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 85%,
+    rgba(34, 40, 49, 1) 100%
+  );
+}
+
 article#members {
-  background-color: var(--gunmetal);
+  background: linear-gradient(
+    180deg,
+    rgba(34, 40, 49, 1) 85%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+article#albums {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(34, 40, 49, 1) 100%
+  );
+}
+
+article#songs {
+  background: linear-gradient(
+    180deg,
+    rgba(34, 40, 49, 1) 85%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 /* end Articles */
 
@@ -187,12 +226,23 @@ article#members {
 /* end Albums */
 
 /* Songs */
-.songs-row > .col {
+article#songs .col {
+  padding: 0.75rem;
+}
+
+.song-item {
+  display: flex;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--prussian-blue);
+}
+
+.song-item-heading {
   flex-basis: calc(calc(100% / 12) * 8);
 }
 
-.songs-row img {
+.song-item img {
   width: calc(calc(100% / 12) * 4);
+  border-radius: 0.25rem;
 }
 /* end Songs */
 
