@@ -234,6 +234,7 @@ article#songs .col {
   display: flex;
   margin-bottom: 5px;
   border-bottom: 1px solid var(--prussian-blue);
+  justify-content: center;
 }
 
 .song-item-heading {
@@ -245,6 +246,51 @@ article#songs .col {
   border-radius: 0.25rem;
 }
 /* end Songs */
+
+/* About me*/
+aside {
+  background-color: black;
+  padding: 5rem 0;
+}
+
+aside > h1 {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+aside > .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+aside > .container > img {
+  width: 180px;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+aside .bio > h6 {
+  padding: 1rem;
+  border-left: 2px solid var(--prussian-blue);
+}
+/* end About me */
+
+/* Footer */
+footer {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+footer > a {
+  text-decoration: none;
+  color: var(--cultured);
+}
+
+footer > a:hover {
+  color: var(--lavender-floral);
+}
+/* end Footer */
 
 @media (min-width: 576px) {
   .albums-list > .col {
@@ -282,10 +328,26 @@ article#songs .col {
   .albums-list > .col {
     flex-basis: calc(calc(100% / 12) * 4);
   }
+
+  .song-item img {
+    width: calc(calc(100% / 12) * 3);
+  }
+
+  aside > .container {
+    justify-content: space-around;
+  }
+
+  aside > .container > .bio {
+    flex-basis: calc(calc(100% / 12) * 8);
+  }
 }
 
 @media (min-width: 992px) {
   .albums-list > .col {
     flex-basis: calc(calc(100% / 12) * 3);
+  }
+
+  .song-item img {
+    width: calc(calc(100% / 12) * 2);
   }
 }
